@@ -1,0 +1,26 @@
+{
+  "files": {
+    "controllers/books.js": [
+      {
+        "id": "c6a14cec-a38d-4ecd-a8d7-e76213d14c12",
+        "line": 1,
+        "version": 96,
+        "index": 0
+      },
+      {
+        "id": "8caf1331-7b3c-403a-b0b1-255fd84fed82",
+        "line": 4,
+        "version": 96,
+        "index": 59
+      }
+    ],
+    "routes/books.js": [
+      {
+        "id": "b6fbb554-708a-435e-894c-8ba2ba944456",
+        "line": 6,
+        "version": 1,
+        "index": 178
+      }
+    ]
+  }
+}
