@@ -2,7 +2,7 @@ const Book = require('../models/Book')
 
 module.exports = {
     getDiscover: (req,res)=>{
-        res.render('discover.ejs')
+        res.render('discover.ejs', {user: req.user})
     },
     createBook: async (req, res)=>{
       try{

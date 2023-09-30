@@ -7,7 +7,8 @@ exports.getLogin = (req, res) => {
     return res.redirect('/books')
   }
   res.render('login', {
-    title: 'Login'
+    title: 'Login', 
+    user: req.user
   })
 }
 
