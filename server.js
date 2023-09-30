@@ -11,6 +11,7 @@ const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const bookRoutes = require('./routes/books')
 const discoverRoutes = require('./routes/discover')
+const path = require('path')
 
 require('dotenv').config({path: './config/.env'})
 
@@ -20,6 +21,7 @@ require('./config/passport')(passport)
 connectDB()
 
 app.set('view engine', 'ejs')
+app.use(express.static(path.join(__dirname, 'dist')));
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
