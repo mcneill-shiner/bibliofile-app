@@ -7,4 +7,6 @@ router.get('/', ensureAuth, discoverController.getDiscover)
 
 router.post('/createBook', discoverController.createBook)
 
+router.get('/searchBooks', discoverController.searchBooks)
+
 module.exports = router

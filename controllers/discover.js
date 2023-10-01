@@ -12,5 +12,8 @@ module.exports = {
       }catch(err){
           console.log(err)
         }
+    },
+    searchBooks: async (req, res) => {
+        console.log(req)
     }
 }
