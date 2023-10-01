@@ -1,37 +1,37 @@
-<header class="p-3 bg-oyster text-white mb-4">
-    <div class="container">
+<header class="">
+    <div class="">
 
-        <% if (typeof user !== 'undefined') { %>
+                <% if (typeof user !== 'undefined') { %>
             <!-- nav for logged in user -->
-            <div class="flex align-items-center justify-content-center justify-content-lg-start">
-                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="/" class="nav-link px-2 text-white">Home Logged In</a></li>
-                        <li><a href="/books" class="nav-link px-2 text-white">Bookshelf</a></li>
-                        <li><a href="/discover" class="nav-link px-2 text-white">Discover</a></li>                        
-                    </ul>
-
-                    <img src="assets/bibliofile-logo-rectangular.png" alt="Bibliofile logo">
-                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a class="btn btn-outline-light me-2" href="/logout">Logout</a></li>
-                    </ul>
+            <div class="flex justify-between max-h-24 items-center px-4">
+                <ul class="flex gap-4 font-bold">
+                    <li><a href="/books" class=""><span class="font-semibold">Bookshelf</span></a></li>
+                    <li><a href="/discover" class=""><span>Discover</span></a></li>                        
+                </ul>
+                <div>
+                    <a href="/"><img src="assets/bibliofile-logo-rectangular.png" alt="Bibliofile logo" class=""></a>
                 </div>
-            <% } else { %>
-                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="/" class="nav-link px-2 text-white">Home Test</a></li>
-                        <li><a href="/books" class="nav-link px-2 text-white">Bookshelf</a></li>
-                    <li><a href="/discover" class="nav-link px-2 text-white">Discover</a></li>    
-                    </ul>
-
-                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li class="title">Book Tracker</li>
-                    </ul>
-                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a class="btn btn-outline-light me-2" href="/logout">Logout</a></li>
-                    </ul>
+                <div>
+                    <a class="px-4 py-2 font-bold border-2 border-black rounded-sm" href="/logout">Logout</a>
                 </div>
 
-            <% } %>
+            </div>
+        <% } else { %>
+                <!-- nav for anonymous user -->
+                <div class="flex justify-between max-h-24 items-center px-4">
+                    <ul class="flex gap-4 font-semibold">
+                        <li><a href="/books" class="">Bookshelf</a></li>                        
+                    </ul>
+
+                    <a href="/"><img src="assets/bibliofile-logo-rectangular.png" alt="Bibliofile logo" class=""></a>
+                    <ul class="flex gap-4 font-bold px-4 py-2 font-bold border-2 border-black rounded-sm">
+                        <li><a href="/login" class="">Log In</a></li>
+                        <li><a href="/signup" class="">Sign Up</a></li>                        
+                    </ul>
+                </div>
+        <% } %>
+
+
     </div>
 </header>
 
