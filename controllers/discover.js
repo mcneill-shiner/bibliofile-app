@@ -32,11 +32,11 @@ module.exports = {
         const searchResult = matches.map(match => `
             <div class="search-result flex flex-col justify-between mx-auto items-center py-2">
                 <div class="h-24">
-                    <img src="${match.volumeInfo.imageLinks.thumbnail ? match.volumeInfo.imageLinks.thumbnail : ''}" alt="${match.volumeInfo.title} Cover" class="book-cover shadow-lg my-auto">
+                    <a href=""><img src="${match.volumeInfo.imageLinks.thumbnail ? match.volumeInfo.imageLinks.thumbnail : ''}" alt="${match.volumeInfo.title} Cover" class="book-cover shadow-xl my-auto"></a>
                 </div>
-                <div>
-                    <h4 class="italic text-lg text-center">${match.volumeInfo.title}</h4>
-                    <span class="text-center">${match.volumeInfo.authors[0]}</span>
+                <div class="flex flex-col justify-between items-center">
+                    <a href=""><h4 class="italic text-lg text-center">${match.volumeInfo.title}</h4></a>
+                    <a href=""><span class="text-center">${match.volumeInfo.authors ? match.volumeInfo.authors : ''}</span></a>
                 </div>
             </div>
             `
