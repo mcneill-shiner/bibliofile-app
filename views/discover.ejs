@@ -2,28 +2,30 @@
 <body class="font-serif bg-oyster">
 <%- include('../partials/header') %>
 
-    <div class="container">
-      <div class="row">
-        <h1>Discover Books</h1>
-        <h2>Find books to add to your library</h2>
-        <div class="form-container">
-          <input type="text" id="search" placeholder="Enter title or author name...">
-<!--           <input type="submit"> -->
-        </div>
-        <div id="match-list"></div>
-      </div>
-    </div>
 
+
+<!-- new version -->
     <section>
       <div class="mx-auto my-4">
         <h1 class="text-4xl">Discover Books</h1>
 
-        <form>
+        <form action="/discover/searchBooks" method="GET">
           <div>
-            <input type="search" id="book-search" name="book-search" />
+            <input type="search" id="search" name="bookSearch" />
             <button>Search</button>
           </div>
         </form>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 max-w-6xl mx-auto" id="results">
+
+
+          <% if (searchResult && searchResult != '') { %>
+            <%- searchResult %>
+          <% } %>
+            
+
+
+        </div>
 
       </div>
     </section>

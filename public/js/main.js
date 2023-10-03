@@ -6,6 +6,7 @@ const matchList = document.getElementById('match-list')
 const searchResult = document.querySelectorAll('.search-result')
 const selectBook = document.querySelectorAll('.select-book')
 
+
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteBook)
 })
@@ -22,11 +23,11 @@ Array.from(selectBook).forEach((el)=>{
   el.addEventListener('click', addBook)
 })
 
-search.addEventListener('input', () => searchBooks(search.value))
+// search.addEventListener('input', () => searchBooks(search.value))
 
-Array.from(searchResult).forEach((el) => {
-  el.addEventListener('click', displayResult)
-})
+// Array.from(searchResult).forEach((el) => {
+//   el.addEventListener('click', displayResult)
+// })
             
                      
 
@@ -85,54 +86,44 @@ async function markIncomplete(){
     }
 }
 
-const searchBooks = async searchText => {
-  console.log('Event listener is working!')
-  searchText.split(' ').join('+')
-  const res = await fetch(`https://openlibrary.org/search.json?q=${searchText}`)
-  const books = await res.json()
+// const searchBooks = async searchText => {
+//   console.log('Event listener is working!')
+//   searchText.split(' ').join('+')
+//   const res = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchText}&key=AIzaSyAxINEs5AYuafqj6e64ZENOp-JyKj6UTRk`)
+//   const books = await res.json()
 
-  let matches = books.docs
+//   let matches = books.items
+//   console.log(matches)
+//   console.log(`HTML should display ${matches.length} matches.`)
+//   console.log(matches[0].volumeInfo.imageLinks.thumbnail)
 
-  if (searchText.length == 0) {
-    matches = []
-    matchList.innerHTML = ''
-  }
+//   if (searchText != '') {
+//     matchList.innerHTML = ''
+//   }
 
-  // storeSearchResults(matches)
-  outputHtml(matches)
+//   // storeSearchResults(matches)
+//   outputHtml(matches)
 
-  console.log(matches)
-}
-
-// let searchResultBooks = {}
-// storeSearchResults(matches) {
-//   matches.forEach(match => 
-//     //stores search result info in an object
-//     searchResultBooks[uniqueIdentifier, maybe match.cover_edition_key] = {
-//       title: match.title,
-//       author: match.
-//       imageLink: `https://covers.openlibrary.org/b/olid/${match.cover_edition_key}.jpg`
-//     }
-//   )
+//   console.log(matches)
 // }
 
-const outputHtml = matches => {
-  console.log('We have matches!')
-  if (matches.length > 0) {
-    const html = matches.map(match => `
-      <div class="search-result">
-        <img src="https://covers.openlibrary.org/b/olid/${match.cover_edition_key}.jpg" alt="${match.title} Cover" class="book-cover">
-        <div>
-          <h4>${match.title}</h4>
-          <span>${match.author_name}</span>
-        </div>
-      </div>
-    `
-    ).join('')
+// const outputHtml = matches => {
+//   if (matches.length > 0) {
+//     console.log('We have matches!')
+//     const html = matches.map(match => `
+//       <div class="search-result flex flex-col justify-center">
+//         <img src="${match.volumeInfo.imageLinks.thumbnail}" alt="${match.volumeInfo.title} Cover" class="book-cover">
+//         <div>
+//           <h4 class="italic">${match.volumeInfo.title}</h4>
+//           <span>${match.volumeInfo.authors[0]}</span>
+//         </div>
+//       </div>
+//     `
+//     ).join('')
 
-    matchList.innerHTML = html
-  }
-}
+//     matchList.innerHTML = html
+//   }
+// }
 
 // const displayResult = 
 
